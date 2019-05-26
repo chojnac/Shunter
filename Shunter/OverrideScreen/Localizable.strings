@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Shunter
+
+  Created by Wojciech Chojnacki on 19/05/2019.
+  Copyright © 2019 Wojciech Chojnacki. All rights reserved.
+*/
+
+"FeatureOverride.Button.Close" = "Close";
+"FeatureOverride.Title" = "Features";
