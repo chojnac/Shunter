@@ -9,38 +9,38 @@
 #if canImport(UIKit)
 import UIKit
 
-class FeaturesOverrideViewController: UITableViewController {
+open class FeaturesOverrideViewController: UITableViewController {
     let defaultReuseIdentifier = "Default"
-    
+
     fileprivate enum FeatureStatus {
         case overrided(Bool)
         case notOverrided(Bool)
     }
-    
+
     fileprivate struct CellViewModel {
         let identifier: Feature.Identifier
         let name: String
         let description: String
         let status: FeatureStatus
     }
-    
+
     private let featureManager: FeatureManager
-    
+
     private var cellViewModels = [CellViewModel]()
-    
-    init(featureManager: FeatureManager) {
+
+    public init(featureManager: FeatureManager) {
         self.featureManager = featureManager
         super.init(style: .grouped)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func viewDidLoad() {
+
+    override open func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("FeatureOverride.Title", comment:"")
-        
+        title = NSLocalizedString("FeatureOverride.Title", bundle: Bundle(for: type(of: self)), comment: "")
+
         cellViewModels = featureManager.allFeatures.map {
             let value = featureManager.isEnabled($0)
             let status: FeatureStatus = featureManager.isOverrided(feature: $0) ? .overrided(value) : .notOverrided(value)
@@ -49,18 +49,18 @@ class FeaturesOverrideViewController: UITableViewController {
                           description: $0.comment ?? "",
                           status: status)
         }
-        
+
         tableView.register(FeatureViewCell.self, forCellReuseIdentifier: defaultReuseIdentifier)
         tableView.allowsSelection = false
     }
 
     // MARK: - Table view data source
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cellViewModels.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: defaultReuseIdentifier, for: indexPath) as? FeatureViewCell else {
             fatalError("Missing cell")
         }
@@ -71,7 +71,6 @@ class FeaturesOverrideViewController: UITableViewController {
         return cell
     }
 
-    
 }
 
 extension FeaturesOverrideViewController: FeatureViewCellDelegate {
@@ -85,28 +84,28 @@ extension FeaturesOverrideViewController: FeatureViewCellDelegate {
     }
 }
 
-fileprivate protocol FeatureViewCellDelegate: class {
+private protocol FeatureViewCellDelegate: class {
     func featureViewCell(_ cell: FeatureViewCell, didSelectValue: Bool?)
 }
 
-fileprivate class FeatureViewCell: UITableViewCell {
+private class FeatureViewCell: UITableViewCell {
     private var segments: UISegmentedControl!
     weak var delegate: FeatureViewCellDelegate?
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: nil)
-        
+
         let segments = UISegmentedControl(items: ["T", "F", "D"])
         accessoryView = segments
         self.segments = segments
-        
+
         segments.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func populate(with viewModel: FeaturesOverrideViewController.CellViewModel) {
         self.textLabel?.text = viewModel.name
         self.detailTextLabel?.text = viewModel.description
@@ -117,7 +116,7 @@ fileprivate class FeatureViewCell: UITableViewCell {
             segments.selectedSegmentIndex = 2
         }
     }
-    
+
     @objc private func segmentAction(_ sender: UISegmentedControl) {
         let value: Bool?
         if sender.selectedSegmentIndex == 0 {
@@ -127,7 +126,7 @@ fileprivate class FeatureViewCell: UITableViewCell {
         } else {
             value = nil
         }
-        
+
         delegate?.featureViewCell(self, didSelectValue: value)
     }
 }

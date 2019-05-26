@@ -12,7 +12,7 @@ public final class InMemorySettingsStorage: SettingsStorage {
     public func isEnabled(_ feature: Feature) -> Bool? {
         return values[feature.identifier]
     }
-    
+
     public func setFeature(feature: Feature, isEnabled: Bool?) {
         guard let isEnabled = isEnabled else {
             values.removeValue(forKey: feature.identifier)
@@ -20,7 +20,7 @@ public final class InMemorySettingsStorage: SettingsStorage {
         }
         values[feature.identifier] = isEnabled
     }
-    
+
     private var values: [String: Bool] = [:]
-    
+
 }

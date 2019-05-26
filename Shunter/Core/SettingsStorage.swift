@@ -10,6 +10,6 @@ import Foundation
 
 public protocol SettingsStorage {
     func isEnabled(_ feature: Feature) -> Bool?
-    
+
     func setFeature(feature: Feature, isEnabled: Bool?)
 }

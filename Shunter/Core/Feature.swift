@@ -12,7 +12,7 @@ public struct Feature: Hashable {
     public typealias Identifier = String
     public let identifier: Identifier
     public let comment: String?
-    
+
     public init(_ identifier: Identifier, comment: String? = nil) {
         self.identifier = identifier
         self.comment = comment

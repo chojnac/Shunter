@@ -11,7 +11,7 @@ import Foundation
 public struct Configuration {
     public var userDefaultsKey: String
     public var showOverrideScreenOnShake: Bool
-    
+
     public static func defaultConfiguration(showOverrideScreenOnShake: Bool = true) -> Configuration {
         return Configuration(userDefaultsKey: "featureManager", showOverrideScreenOnShake: showOverrideScreenOnShake)
     }

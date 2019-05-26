@@ -7,13 +7,13 @@
 //
 
 import UIKit
+import Shunter
 
 class ViewController: UIViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()          
-    }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     @IBAction func actionShowOverrideScreen(_ sender: Any) {
         let viewController = FeaturesOverrideViewController(featureManager: FeatureManager.shared)
@@ -21,9 +21,8 @@ class ViewController: UIViewController {
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(dismissOverrideScreen))
         present(navigationController, animated: true, completion: nil)
     }
-    
+
     @objc func dismissOverrideScreen(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
 }
-

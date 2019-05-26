@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Shunter
 
 extension Feature {
     public static let testFeature = Feature("ios_test", comment: "Example feature")

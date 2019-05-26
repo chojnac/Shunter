@@ -7,15 +7,15 @@
 //
 
 import UIKit
+import Shunter
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+
         #if DEBUG
         let showOverrideScreenOnShake = true
         #else
@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .testFeature: false,
             .feature01Feature: true
             ])
-        
+
         return true
     }
 

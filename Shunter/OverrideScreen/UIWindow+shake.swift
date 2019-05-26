@@ -18,7 +18,4 @@ extension UIWindow {
     }
 }
 
-extension NSNotification.Name {
-    public static let FeatureManagerShakeNotification = NSNotification.Name(rawValue: "FeatureManagerShakeNotification")
-}
 #endif
