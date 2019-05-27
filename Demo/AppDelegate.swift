@@ -24,8 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FeatureManager.setup(
             configuration: .defaultConfiguration(showOverrideScreenOnShake: showOverrideScreenOnShake),
             features: [
-            .testFeature: false,
-            .feature01Feature: true
+                .testFeature: false,
+                .feature01Feature: true
             ])
 
         return true

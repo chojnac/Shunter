@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Demo-MacOs
+//  Demo-MacOS
 //
 //  Created by Wojciech Chojnacki on 26/05/2019.
 //  Copyright © 2019 Wojciech Chojnacki. All rights reserved.

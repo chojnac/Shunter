@@ -115,7 +115,7 @@
 		0EE98638229B3A9E00EFDF4C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0EE9863B229B3A9E00EFDF4C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0EE9863D229B3A9E00EFDF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0EE9863E229B3A9E00EFDF4C /* Demo_MacOs.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo_MacOs.entitlements; sourceTree = "<group>"; };
+		0EE9863E229B3A9E00EFDF4C /* Demo_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo_MacOS.entitlements; sourceTree = "<group>"; };
 		0EE98649229B3B2900EFDF4C /* Shunter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shunter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0EE98656229B3C2400EFDF4C /* Info-iOS.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		0EE98658229B3C4200EFDF4C /* Info-MacOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-MacOS.plist"; sourceTree = "<group>"; };
@@ -245,7 +245,7 @@
 				0EE98638229B3A9E00EFDF4C /* Assets.xcassets */,
 				0EE9863A229B3A9E00EFDF4C /* Main.storyboard */,
 				0EE9863D229B3A9E00EFDF4C /* Info.plist */,
-				0EE9863E229B3A9E00EFDF4C /* Demo_MacOs.entitlements */,
+				0EE9863E229B3A9E00EFDF4C /* Demo_MacOS.entitlements */,
 			);
 			path = "Demo-MacOS";
 			sourceTree = "<group>";

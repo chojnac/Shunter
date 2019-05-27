@@ -1,12 +1,11 @@
 //
-//  TestFeature.swift
-//  Shunter
+//  ApplicationFeatures.swift
+//  Demo
 //
 //  Created by Wojciech Chojnacki on 30/01/2019.
 //  Copyright © 2019 Wojciech Chojnacki. All rights reserved.
 //
 
-import Foundation
 import Shunter
 
 extension Feature {
