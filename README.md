@@ -6,15 +6,15 @@ _Shunter_ is a small framework enabling [feature flags](https://en.wikipedia.org
 
 ## Motivation
 
-A feature flag is a very simple but yet powerful concept. It enables developers to merge code earlier, demonstrate "unfinished" features or ships alternative code paths. Also when a remote server is introduced a flag provides a way to disable a "problematic" new feature in the production builds. 
+A feature flag is a very simple but yet powerful concept. It enables developers to merge code earlier, demonstrate "unfinished" features or ships alternative code paths. Also with companion remote server - it gives a way to disable "problematic" new feature in the production builds. 
 
-All this results in increasing the speed of development and validating new ideas. Also gives developers a safety net with new releases. 
+All this helps to increase the speed of development and validating new ideas.
 
-The goal of this library is to provide a very simple solution that allows to quickly plugin feature flags in your project. 
+The goal of this library is to provide a very simple solution to quickly plugin feature flags in your project. 
 
 ## Features
 * Simple and small 
-* Allows defining features default state (on/off)
+* Define features default state (on/off)
 * UI for overriding settings in the development/test environment.
 
 ### TODO
