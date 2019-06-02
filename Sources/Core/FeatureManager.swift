@@ -9,7 +9,7 @@
 import Foundation
 
 public final class FeatureManager {
-    private static var configuredShared: FeatureManager?
+    static var configuredShared: FeatureManager?
     var shakeNotificationObserver: Any?
 
     private var features: [Feature: Bool] = [:]
@@ -25,6 +25,7 @@ public final class FeatureManager {
     deinit {
         if let observer = shakeNotificationObserver {
             NotificationCenter.default.removeObserver(observer)
+            shakeNotificationObserver = nil
         }
     }
 
@@ -43,7 +44,7 @@ public final class FeatureManager {
         overridingStorage.setFeature(feature: feature, isEnabled: value)
     }
 
-    public func isOverrided(feature: Feature) -> Bool {
+    public func isOverrided(_ feature: Feature) -> Bool {
         return overridingStorage.isEnabled(feature) != nil
     }
 

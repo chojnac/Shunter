@@ -43,7 +43,7 @@ open class FeaturesOverrideViewController: UITableViewController {
 
         cellViewModels = featureManager.allFeatures.map {
             let value = featureManager.isEnabled($0)
-            let status: FeatureStatus = featureManager.isOverrided(feature: $0) ? .overrided(value) : .notOverrided(value)
+            let status: FeatureStatus = featureManager.isOverrided($0) ? .overrided(value) : .notOverrided(value)
             return CellViewModel(identifier: $0.identifier,
                           name: $0.identifier,
                           description: $0.comment ?? "",

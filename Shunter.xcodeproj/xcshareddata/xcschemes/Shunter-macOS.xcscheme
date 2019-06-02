@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0EA52860229B34A500705F9F"
+               BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
                BuildableName = "Shunter.framework"
-               BlueprintName = "Shunter"
+               BlueprintName = "Shunter-macOS"
                ReferencedContainer = "container:Shunter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -26,9 +26,29 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "DD7502791C68FCFC006590AF"
+               BuildableName = "Shunter-macOS Tests.xctest"
+               BlueprintName = "Shunter-macOS Tests"
+               ReferencedContainer = "container:Shunter.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
+            BuildableName = "Shunter.framework"
+            BlueprintName = "Shunter-macOS"
+            ReferencedContainer = "container:Shunter.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -45,9 +65,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0EA52860229B34A500705F9F"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
             BuildableName = "Shunter.framework"
-            BlueprintName = "Shunter"
+            BlueprintName = "Shunter-macOS"
             ReferencedContainer = "container:Shunter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +83,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0EA52860229B34A500705F9F"
+            BlueprintIdentifier = "52D6DA0E1BF000BD002C0205"
             BuildableName = "Shunter.framework"
-            BlueprintName = "Shunter"
+            BlueprintName = "Shunter-macOS"
             ReferencedContainer = "container:Shunter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

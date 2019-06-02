@@ -10,12 +10,15 @@ TODO: Add long description of the pod here.
 
   s.homepage         = 'https://github.com/chojnac/Shunter'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Wojciech Chojnacki' => 'chojnac@gmail.com' }
+  s.author           = { 'Wojciech Chojnacki' => 'me@chojnac.com' }
   s.source           = { :git => 'https://github.com/chojnac/Shunter.git', :tag => s.version.to_s }
   s.swift_version    = '5.0'
   
   s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.12'
+  s.tvos.deployment_target = "10.0"
 
-  s.source_files = ['Shunter/**/*.swift']
+  s.source_files  = "Sources/**/*"
+
+  s.frameworks  = "Foundation"
 end

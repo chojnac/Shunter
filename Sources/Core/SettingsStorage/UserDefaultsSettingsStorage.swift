@@ -16,11 +16,7 @@ public final class UserDefaultsSettingsStorage: SettingsStorage {
         self.key = key
         self.userDefaults = userDefaults
     }
-
-    private func buildKey(for feature: Feature) -> String {
-        return "\(self.key).\(feature.identifier)"
-    }
-
+    
     private func values() -> [String: Bool] {
         if let values = userDefaults.dictionary(forKey: key) as? [String: Bool] {
             return values
