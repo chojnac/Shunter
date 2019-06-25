@@ -17,9 +17,6 @@ The goal of this library is to provide a very simple solution to quickly plugin 
 * Define features default state (on/off)
 * UI for overriding settings in the development/test environment.
 
-### TODO
-* Remote switching
-
 ## Requirements
 * iOS 11.0+ / macOS 10.12+
 * Xcode 10.2+
@@ -48,11 +45,7 @@ import Shuter
 
 ## Usage 
 
-A feature is a type containing an identifier and a comment. To define the feature you need to create a new instance of a struct. 
-
-```swift
-Feature("ios_test", comment: "Example feature")
-```
+A feature is a type containing an identifier and a comment. 
 
 The best way to group all features in one place is to create static properties in an extension on the `Feature` type. For example:
 
@@ -60,8 +53,8 @@ The best way to group all features in one place is to create static properties i
 import Shunter
 
 extension Feature {
-    public static let testFeature = Feature("ios_test", comment: "Example feature")
     public static let feature01Feature = Feature("ios_feature01", comment: "Example feature #01")
+    public static let feature02Feature = Feature("ios_feature02", comment: "Example feature #02")
 }
 ```
 
@@ -77,18 +70,29 @@ let showOverrideScreenOnShake = false
 FeatureManager.setup(
     configuration: .defaultConfiguration(showOverrideScreenOnShake: showOverrideScreenOnShake),
     features: [
-        .testFeature: false,
-        .feature01Feature: true
+        .feature01Feature: false,
+        .feature02Feature: true
     ])
 ```
 
 The example of how to check feature status in your code:
 
 ```swift
-if FeatureManager.shared.isEnabled(.testFeature) {
+if FeatureManager.shared.isEnabled(.feature02Feature) {
     // enable your feature 
 } else {
     // the feature is disabled
+}
+
+```
+
+or shorter version:
+
+```swift
+if FeatureManager.shared[.feature02Feature] {
+// enable your feature 
+} else {
+// the feature is disabled
 }
 
 ```

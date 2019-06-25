@@ -9,6 +9,6 @@
 import Shunter
 
 extension Feature {
-    public static let testFeature = Feature("ios_test", comment: "Example feature")
-    public static let feature01Feature = Feature("ios_feature01", comment: "Example feature #01")
+    public static let unicornsFeature = Feature("ios_unicorns", comment: "Add unicorns 🦄")
+    public static let rainbowFeature = Feature("ios_rainbow", comment: "Add rainbow 🌈")
 }

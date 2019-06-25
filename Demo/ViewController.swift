@@ -11,26 +11,48 @@ import Shunter
 
 class ViewController: UIViewController {
 
-    @IBOutlet var featureLabel: UILabel!
+    @IBOutlet var decoration1Labels: [UILabel]!
+    
+    @IBOutlet var decoration2Labels: [UILabel]!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var bodyLabel: UILabel!
     private var featureManager: FeatureManager! //because this is a root view controller it is created before AppDelegate complete initialization
 
+    private var lyrics = Lyrics.song1()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         featureManager = FeatureManager.shared
+        
+        decoration2Labels.forEach {
+            $0.text = "🦄"
+        }
+        
+        decoration1Labels.forEach {
+            $0.text = "🌈"
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        if featureManager.isEnabled(.testFeature) {
-            featureLabel.text = "Test feature enabled"
-            featureLabel.isHidden = false
-        } else if featureManager.isEnabled(.feature01Feature) {
-            featureLabel.text = "Feature 01 enabled"
-            featureLabel.isHidden = false
+        
+        if featureManager.isEnabled(.unicornsFeature) {
+            decoration2Labels.forEach { $0.isHidden = false }
         } else {
-            featureLabel.isHidden = true
+            decoration2Labels.forEach { $0.isHidden = true }
         }
+        
+        if featureManager.isEnabled(.rainbowFeature) {
+            decoration1Labels.forEach { $0.isHidden = false }
+        } else {
+            decoration1Labels.forEach { $0.isHidden = true }
+        }
+        populate()
+    }
+    
+    private func populate() {
+        self.titleLabel.text = lyrics.title
+        self.bodyLabel.text = lyrics.body
     }
 
     @IBAction func actionShowOverrideScreen(_ sender: Any) {

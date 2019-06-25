@@ -48,7 +48,7 @@ public final class FeatureManager {
         return overridingStorage.isEnabled(feature) != nil
     }
 
-    subscript(feature: Feature) -> Bool {
+    subscript(_ feature: Feature) -> Bool {
         return isEnabled(feature)
     }
 }
