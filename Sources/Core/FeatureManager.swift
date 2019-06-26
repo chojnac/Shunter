@@ -9,7 +9,7 @@
 import Foundation
 
 public final class FeatureManager {
-    static var configuredShared: FeatureManager?
+    public static var configuredShared: FeatureManager?
     var shakeNotificationObserver: Any?
 
     private var features: [Feature: Bool] = [:]
@@ -30,10 +30,10 @@ public final class FeatureManager {
     }
 
     public func isEnabled(_ feature: Feature) -> Bool {
-        if let value = overridingStorage.isEnabled(feature) { //saved value
+        if let value = overridingStorage.isEnabled(feature) { // saved value
             return value
         }
-        return features[feature] ?? false //default value or false if feature not registered
+        return features[feature] ?? false // default value or false if feature not registered
     }
 
     public func register(feature: Feature, defaultValue: Bool = false) {
@@ -54,7 +54,6 @@ public final class FeatureManager {
 }
 
 extension FeatureManager {
-
     public static func setup(configuration: Configuration = .defaultConfiguration(), features: [Feature: Bool] = [:]) {
         configuredShared = FeatureManager(overridingStorage: UserDefaultsSettingsStorage(key: configuration.userDefaultsKey))
         for (key, defaultValue) in features {

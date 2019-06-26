@@ -9,7 +9,8 @@ let package = Package(
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
             name: "Shunter",
-            targets: ["Shunter"]),
+            targets: ["Shunter"]
+        ),
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -17,11 +18,13 @@ let package = Package(
     ],
     targets: [
         .target(
-            name: "Shunter",            
+            name: "Shunter",
             dependencies: [],
-            path: "Sources"),
+            path: "Sources"
+        ),
         .testTarget(
             name: "ShunterTests",
-            dependencies: ["Shunter"]),
+            dependencies: ["Shunter"]
+        ),
     ]
 )

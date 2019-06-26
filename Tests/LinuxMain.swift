@@ -1,5 +1,5 @@
-import XCTest
 @testable import ShunterTests
+import XCTest
 
 XCTMain([
     testCase(FeatureManagerTests.allTests),

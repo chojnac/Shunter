@@ -7,15 +7,15 @@
 //
 
 #if canImport(UIKit)
-import UIKit
+    import UIKit
 
-extension UIWindow {
-    open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        super.motionEnded(motion, with: event)
-        if motion == .motionShake {
-            NotificationCenter.default.post(name: NSNotification.Name.FeatureManagerShakeNotification, object: nil)
+    extension UIWindow {
+        open override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+            super.motionEnded(motion, with: event)
+            if motion == .motionShake {
+                NotificationCenter.default.post(name: NSNotification.Name.FeatureManagerShakeNotification, object: nil)
+            }
         }
     }
-}
 
 #endif

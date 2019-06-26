@@ -16,7 +16,7 @@ public final class UserDefaultsSettingsStorage: SettingsStorage {
         self.key = key
         self.userDefaults = userDefaults
     }
-    
+
     private func values() -> [String: Bool] {
         if let values = userDefaults.dictionary(forKey: key) as? [String: Bool] {
             return values
@@ -43,5 +43,4 @@ public final class UserDefaultsSettingsStorage: SettingsStorage {
         userDefaults.set(values, forKey: key)
         userDefaults.synchronize()
     }
-
 }

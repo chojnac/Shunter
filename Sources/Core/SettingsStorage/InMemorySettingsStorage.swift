@@ -22,5 +22,4 @@ public final class InMemorySettingsStorage: SettingsStorage {
     }
 
     private var values: [String: Bool] = [:]
-    
 }
