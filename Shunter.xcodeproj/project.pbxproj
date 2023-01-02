@@ -55,6 +55,8 @@
 		0EE5191622A3EC43007B8A3D /* UserDefaultsSettingsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5191422A3EC43007B8A3D /* UserDefaultsSettingsStorageTests.swift */; };
 		0EE5191722A3EC43007B8A3D /* UserDefaultsSettingsStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5191422A3EC43007B8A3D /* UserDefaultsSettingsStorageTests.swift */; };
 		52D6D9871BEFF229002C0205 /* Shunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Shunter.framework */; };
+		BB3695142963076C007F18E3 /* Shunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Shunter.framework */; };
+		BB3695152963076C007F18E3 /* Shunter.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D97C1BEFF229002C0205 /* Shunter.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DD7502881C68FEDE006590AF /* Shunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6DA0F1BF000BD002C0205 /* Shunter.framework */; };
 		DD7502921C690C7A006590AF /* Shunter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D6D9F01BEFFFBE002C0205 /* Shunter.framework */; };
 /* End PBXBuildFile section */
@@ -66,6 +68,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
 			remoteInfo = Shunter;
+		};
+		BB3695162963076C007F18E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52D6D9731BEFF229002C0205 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D6D97B1BEFF229002C0205;
+			remoteInfo = "Shunter-iOS";
 		};
 		DD7502801C68FCFC006590AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -82,6 +91,20 @@
 			remoteInfo = "Shunter-tvOS";
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		BB3695182963076C007F18E3 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BB3695152963076C007F18E3 /* Shunter.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0E92E54C22C2313A008810B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -122,6 +145,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB3695142963076C007F18E3 /* Shunter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +253,7 @@
 				52D6D99C1BEFF38C002C0205 /* Configs */,
 				0EE518F522A3E1E5007B8A3D /* Demo */,
 				52D6D97D1BEFF229002C0205 /* Products */,
+				BB3695132963076C007F18E3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -273,6 +298,13 @@
 			);
 			name = Tests;
 			path = Tests/ShunterTests;
+			sourceTree = "<group>";
+		};
+		BB3695132963076C007F18E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		DD7502721C68FC1B006590AF /* Frameworks */ = {
@@ -325,10 +357,12 @@
 				0EE518F022A3E1E5007B8A3D /* Sources */,
 				0EE518F122A3E1E5007B8A3D /* Frameworks */,
 				0EE518F222A3E1E5007B8A3D /* Resources */,
+				BB3695182963076C007F18E3 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BB3695172963076C007F18E3 /* PBXTargetDependency */,
 			);
 			name = Demo;
 			productName = Demo;
@@ -663,6 +697,11 @@
 			isa = PBXTargetDependency;
 			target = 52D6D97B1BEFF229002C0205 /* Shunter-iOS */;
 			targetProxy = 52D6D9881BEFF229002C0205 /* PBXContainerItemProxy */;
+		};
+		BB3695172963076C007F18E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D6D97B1BEFF229002C0205 /* Shunter-iOS */;
+			targetProxy = BB3695162963076C007F18E3 /* PBXContainerItemProxy */;
 		};
 		DD7502811C68FCFC006590AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

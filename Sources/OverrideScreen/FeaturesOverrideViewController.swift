@@ -88,17 +88,17 @@
     }
 
     private class FeatureViewCell: UITableViewCell {
-        private var segments: UISegmentedControl!
+        private var featureSwitch: UISwitch!
         weak var delegate: FeatureViewCellDelegate?
 
         override init(style _: UITableViewCell.CellStyle, reuseIdentifier _: String?) {
             super.init(style: .subtitle, reuseIdentifier: nil)
 
-            let segments = UISegmentedControl(items: ["T", "F", "D"])
-            accessoryView = segments
-            self.segments = segments
+            let featureSwitch = UISwitch()
+            accessoryView = featureSwitch
+            self.featureSwitch = featureSwitch
 
-            segments.addTarget(self, action: #selector(segmentAction(_:)), for: .valueChanged)
+            featureSwitch.addTarget(self, action: #selector(featureSwitchAction(_:)), for: .valueChanged)
         }
 
         required init?(coder _: NSCoder) {
@@ -109,24 +109,15 @@
             textLabel?.text = viewModel.name
             detailTextLabel?.text = viewModel.description
             switch viewModel.status {
-            case let .overrided(value):
-                segments.selectedSegmentIndex = value ? 0 : 1
-            case .notOverrided:
-                segments.selectedSegmentIndex = 2
+            case let .overrided(value), let .notOverrided(value):
+                featureSwitch.isOn = value ? true : false
             }
         }
 
-        @objc private func segmentAction(_ sender: UISegmentedControl) {
-            let value: Bool?
-            if sender.selectedSegmentIndex == 0 {
-                value = true
-            } else if sender.selectedSegmentIndex == 1 {
-                value = false
-            } else {
-                value = nil
-            }
+        @objc private func featureSwitchAction(_ sender: UISwitch) {
+           
 
-            delegate?.featureViewCell(self, didSelectValue: value)
+            delegate?.featureViewCell(self, didSelectValue: sender.isOn)
         }
     }
 
